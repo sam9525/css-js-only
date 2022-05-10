@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vider Popup</title>
+    <link rel="stylesheet" href="../css/video_popup.css">
+</head>
+<body>
+    <div class="btn">
+        <div class="play"></div>
+        <p>play video</p>
+    </div>
+    <div class="clip">
+        <video src="" controls></video>
+        <b class="close">Close</b>
+    </div>
+    <script>
+        const btn  = document.querySelector('.btn');
+        const clip  = document.querySelector('.clip');
+        const close  = document.querySelector('.close');
+        const video  = document.querySelector('.video');
+
+        btn.onclick = function () {
+            btn.classList.add('active');
+            clip.classList.add('active');
+            video.play();
+            video.currentTime = 0;
+        }
+        close.onclick = function () {
+            btn.classList.remove('active');
+            clip.classList.remove('active');
+            video.pause();
+        }
+
+
+    </script>
+</body>
+</html>
