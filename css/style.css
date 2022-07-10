@@ -17,10 +17,10 @@ a {
 }
 
 .wrapper {
-    padding: 5rem;
+    padding: 6vmin;
 }
 .wrapper .title {
-    font-size: 6rem;
+    font-size: 8vmin;
     display: flex;
     justify-content: center;
     color: white;
@@ -46,7 +46,8 @@ a {
         width: 33.333%;
     }
 }
- @media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
+    
     .col-sm-2 {
         width: 50%;
     }
@@ -98,10 +99,10 @@ img {
 
 .item {
     display: flex;
-    font-size: 2rem;
+    font-size: 2.15vmin;
     color: #FFC600;
-    justify-content: center;
     padding-top: 1rem;
+    justify-content: center;
     text-align: center;
 
     display: -webkit-box;
@@ -109,3 +110,8 @@ img {
     -webkit-line-clamp: 1;
     overflow: hidden;
 }
+/* @media screen and (max-width: 700px) {
+    .item {
+        font-size: 1.5rem;
+    }
+} */

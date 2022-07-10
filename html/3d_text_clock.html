@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Text Clock</title>
+    <link rel="stylesheet" href="../css/3d_text_clock.css">
+</head>
+<body>
+    <body>
+		<div class="container">
+			<div class="text" style="--j:0;">
+				<span style="--i:0">2</span>
+				<span class="hour1" style="--i:1">3</span>
+				<span style="--i:2">4</span>
+				<span style="--i:3">5</span>
+			</div>
+			<div class="text" style="--j:1;">
+				<span style="--i:0">0</span>
+				<span class="hour2" style="--i:1">1</span>
+				<span style="--i:2">2</span>
+				<span style="--i:3">3</span>
+            </div>
+			<div class="text" style="--j:2;">
+				<span style="--i:0">2</span>
+				<span class="min1" style="--i:1">3</span>
+				<span style="--i:2">4</span>
+				<span style="--i:3">5</span>
+			</div>
+			<div class="text" style="--j:3;">
+				<span style="--i:0">2</span>
+				<span class="min2" style="--i:1">6</span>
+				<span style="--i:2">3</span>
+				<span style="--i:3">4</span>
+			</div>
+        </div>
+        
+        <script>
+            const hour1 = document.querySelector('.hour1');
+            const hour2 = document.querySelector('.hour2');
+            const min1 = document.querySelector('.min1');
+            const min2 = document.querySelector('.min2');
+
+            let h1 = Math.floor((new Date().getHours()) / 10);
+            let h2 = new Date().getHours() % 10;
+            let m1 = Math.floor((new Date().getMinutes()) / 10);
+            let m2 = new Date().getMinutes() % 10;
+
+
+
+            // h = (h < 10) ? "0" + h : h;
+            // m = (m < 10) ? "0" + m : m;
+
+            console.log(h1, h2, m1, m2)
+            hour1.innerHTML = h1;
+            hour2.innerHTML = h2;
+            min1.innerHTML = m1;
+            min2.innerHTML = m2;
+        </script>
+	</body>
+</body>
+</html>

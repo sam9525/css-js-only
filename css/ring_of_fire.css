@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #121213;
+}
+
+.ring {
+    width: 400px;
+    height: 400px;
+    border: 10px solid #ff0000;
+    border-radius: 50%;
+    box-shadow: 0 0 30px #ff000083,
+    0 0 50px #ff000083,
+    inset 0 0 30px #ff000083,
+    inset 0 0 50px #ff000083;
+    filter: url(#wave);
+    -webkit-box-reflect: below 5px linear-gradient(transparent 70%, #121213);
+}
+
+svg {
+    display: none;
+}
