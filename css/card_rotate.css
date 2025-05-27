@@ -1,0 +1,110 @@
+:root {
+  background-color: black;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  display: flex;
+  gap: 20px;
+}
+
+img {
+  width: 200px;
+}
+
+.card-content {
+  position: relative;
+  width: 200px;
+}
+
+.card-content img:nth-child(1) {
+  transform-style: preserve-3d;
+}
+
+.card-content img:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.focus {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease-out;
+  animation: flyIn 0.5s cubic-bezier(0.8, 0, 0.6, 1) forwards;
+}
+
+.focus:hover {
+  filter: blur(0px);
+}
+
+.card-rotation {
+  transform-style: preserve-3d;
+}
+
+.unfocus {
+  animation: flyOut 0.5s cubic-bezier(0.8, 0, 0.6, 1) forwards;
+}
+
+@keyframes flyIn {
+  0% {
+    top: var(--start-y);
+    left: var(--start-x);
+    transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2) rotateY(360deg);
+  }
+}
+
+@keyframes flyOut {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2) rotateY(360deg);
+  }
+  100% {
+    top: var(--start-y);
+    left: var(--start-x);
+    transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+  }
+}
+
+#background-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 500;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  animation: fadeIn 0.2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
